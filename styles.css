@@ -1,0 +1,527 @@
+
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body, html {
+  height: 100%;
+  font-family: Arial, sans-serif;
+}
+
+.section {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  padding: 20px;
+}
+
+#home {
+  position: relative;
+  overflow: hidden;
+}
+
+#home video {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  transform: translateX(-50%) translateY(-50%);
+  z-index: -1;
+}
+
+.logo {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  width: 100px;
+  height: auto;
+}
+
+.titulo{
+  display: flex;
+  flex-direction: column;
+  font-family: "Source Code Pro", monospace;
+  font-weight: 400;
+  align-items: center; /* Centraliza horizontalmente */
+  justify-content: flex-start; /* Alinha ao topo */
+  position: absolute; /* Fixa no topo durante o scroll */
+  top: 30px;
+  left: 0;
+  width: 100%;
+  padding: 20px 0;
+  z-index: 1000; 
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  position: absolute;
+  z-index: 1;
+}
+
+.video-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 10px; /* Adjust as needed */
+}
+
+.main-video {
+  max-width: 100%;
+  height: auto;
+  /* Adjust these values to match your original GIF size */
+  width: 500px; /* Adjust this value to match your original GIF width */
+}
+
+
+.subtexto {
+  font-size: 16px;
+  font-family: "Source Code Pro", monospace;
+  font-optical-sizing: auto;
+  font-weight: 200;
+  font-style: italic;
+  color: white; /* Coloque a cor que você preferir */
+  margin-top: 10px;
+  text-align: center;
+}
+
+.progress-bar {
+  width: 100%;
+  height: 10px;
+  background-color: #ffffff;
+  border-radius: 5px;
+  overflow: hidden;
+  margin-top: 10px;
+}
+
+.progress {
+  width: 0;
+  height: 100%;
+  background-color: #4CAF50;
+  transition: width 0.5s ease;
+}
+
+.divisoria {
+  height: 1px; /* Altura da linha */
+  width: 80%; /* Largura de 80% da página */
+  background-color: #000000; /* Cor da linha */
+  margin: 20px auto; /* Centraliza a linha e adiciona espaçamento superior/inferior */
+  border-radius: 5px; /* (Opcional) Arredondamento dos cantos da linha */
+}
+
+
+#about {
+  background-color: #ffffff;
+  color: #333;
+}
+
+.about-image img {
+  border: 1px solid black; /* Tamanho e cor da borda */
+  padding: 10px; /* Espaço entre a imagem e a borda */
+  background-color: #ffffff; /* Cor de fundo entre a imagem e a borda */
+  max-width: 100%;
+  height: auto;
+}
+
+.about-text {
+  padding: 20px 0;
+}
+
+.divisoria {
+  border: none; /* Remove o estilo padrão da borda */
+  height: 3px; /* Define a altura da linha */
+  width: 80%; /* Define a largura da linha como 80% do contêiner */
+  background-color: black; /* Cor de fundo personalizada da linha */
+  margin: 20px auto; /* Centraliza a linha e define o espaçamento superior/inferior */
+  border-radius: 5px; /* (Opcional) Adiciona bordas arredondadas */
+}
+
+.subtitulos{
+  font-size: 32px;
+  color: #000000;
+  font-family: "League Spartan", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  padding-bottom: 50px;
+}
+
+.textossimpl{
+  font-family: "Source Code Pro", monospace;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.imagem-texto {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh; /* Altura da tela inteira */
+  background-color: #000000;
+}
+
+.imagem-esquerda {
+  flex: 1;
+  text-align: center;
+  padding: 20px;
+}
+
+.imagem-esquerda img {
+  max-width: 100%; /* Faz a imagem ocupar a largura do contêiner */
+  height: auto;
+  border-radius: 10px; /* (Opcional) Bordas arredondadas na imagem */
+}
+
+.texto-direita {
+  flex: 1;
+  color: white;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.texto-direita h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+.texto-direita p {
+  font-size: 1.2rem;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+.imagem-direita-inferior {
+  align-self: flex-end; /* Posiciona a imagem no final do texto, à direita */
+}
+
+.imagem-direita-inferior img {
+  max-width: 150px; /* Tamanho da imagem inferior direita */
+  height: auto;
+  border-radius: 5px; /* (Opcional) Bordas arredondadas */
+}
+
+/* Responsividade */
+@media screen and (max-width: 768px) {
+  .titulo {
+    font-size: 1.5rem;
+    top: 15px;
+  }
+
+  .logo {
+    width: 80px;
+    top: 10px;
+    left: 10px;
+  }
+
+  .content {
+    padding-top: 100px; /* Espaço para o título */
+  }
+
+  .video-container {
+    width: 90%;
+}
+}
+  .subtexto {
+    font-size: 14px;
+  }
+
+  #about {
+    flex-direction: column;
+  }
+
+  .about-image, .about-text {
+    width: 100%;
+  }
+
+  .about-image {
+    margin-bottom: 20px;
+  }
+
+
+@media screen and (max-width: 480px) {
+  .titulo {
+    font-size: 1.2rem;
+  }
+
+  .logo {
+    width: 60px;
+  }
+
+  .video-container {
+    width: 95%;
+  }
+
+  .subtexto {
+    font-size: 12px;
+  }
+}
+
+/* Ajustes para telas muito pequenas */
+@media screen and (max-width: 320px) {
+  .titulo {
+    font-size: 1rem;
+  }
+
+  .logo {
+    width: 50px;
+  }
+}
+
+/* Ajustes para layout das seções 'about' */
+@media screen and (min-width: 769px) {
+  #about {
+    flex-direction: row;
+  }
+
+  .about-image, .about-text {
+    flex: 1;
+    padding: 0 20px;
+  }
+}
+/* Ajustes responsivos */
+@media screen and (max-width: 768px) {
+  .section {
+    padding-top: 180px; /* Espaço para logo e título */
+  }
+  
+  #about.section {
+    flex-direction: column;
+  }
+  
+  .about-text, .about-image {
+    width: 100%;
+  }
+  
+  .imagem-texto {
+    flex-direction: column;
+    height: auto;
+    padding: 20px 0;
+  }
+  
+  .imagem-esquerda, .texto-direita {
+    width: 100%;
+    text-align: center;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .section {
+    padding-top: 160px;
+  }
+  
+  .titulo {
+    font-size: 18px;
+    top: 120px;
+  }
+  
+  .subtitulos {
+    font-size: 24px;
+    padding-bottom: 20px;
+  }
+  
+  .textossimpl {
+    font-size: 14px;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .section {
+    padding-top: 140px;
+  }
+  
+  .titulo {
+    font-size: 16px;
+    top: 100px;
+  }
+}
+
+/* Ajustes para garantir que o conteúdo não fique escondido atrás da logo/título */
+.content {
+  margin-top: 60px;
+}
+
+/* Ajuste para a última seção */
+@media screen and (max-width: 768px) {
+  .imagem-texto {
+    padding-top: 40px;
+  }
+  
+  .texto-direita {
+    padding: 20px;
+  }
+}
+
+
+/* Ajustes específicos para tablets e celulares */
+@media screen and (max-width: 768px) {
+  #home {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding-top: 20px;
+  }
+
+  .logo {
+    position: relative;
+    top: 20px;
+    left: auto;
+    transform: none;
+    margin-bottom: 30px;
+  }
+
+  .titulo {
+    position: relative;
+    top: auto;
+    left: auto;
+    transform: none;
+    margin-top: 20px;
+    padding: 0 15px;
+  }
+
+  .content {
+    margin-top: 40px;
+  }
+
+  /* Ajustes para as outras seções */
+  #about.section {
+    flex-direction: column;
+    padding-top: 20px;
+  }
+  
+  .about-text, .about-image {
+    width: 100%;
+  }
+  
+  .imagem-texto {
+    flex-direction: column;
+    height: auto;
+  }
+  
+  .imagem-esquerda, .texto-direita {
+    width: 100%;
+  }
+}
+
+/* Ajustes específicos para celulares */
+@media screen and (max-width: 480px) {
+  .logo {
+    margin-bottom: 20px;
+  }
+
+  .titulo {
+    font-size: 18px;
+    margin-top: 15px;
+  }
+
+  .content {
+    margin-top: 30px;
+  }
+}
+
+/* Ajustes para celulares muito pequenos */
+@media screen and (max-width: 320px) {
+  .logo {
+    margin-bottom: 15px;
+  }
+
+  .titulo {
+    font-size: 16px;
+    margin-top: 10px;
+  }
+}
+
+/* Estilos base para a seção home */
+#home {
+  position: relative;
+}
+
+/* Estilos base para logo e título */
+.logo {
+  position: absolute;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1001;
+}
+
+.titulo {
+  position: absolute;
+  top: 140px; /* Ajuste conforme necessário para ficar abaixo da logo */
+  left: 50%;
+  transform: translateX(-50%);
+  width: 90%;
+  text-align: center;
+  z-index: 1000;
+}
+
+/* Ajustes para telas menores */
+@media screen and (max-width: 768px) {
+  .logo {
+    top: 30px;
+  }
+
+  .titulo {
+    top: 160px; /* Ajustado para ficar abaixo da logo */
+    font-size: 20px;
+  }
+
+  .content {
+    margin-top: 240px; /* Espaço para logo e título */
+  }
+}
+
+/* Ajustes para celulares */
+@media screen and (max-width: 480px) {
+  .logo {
+    top: 20px;
+  }
+
+  .titulo {
+    top: 140px;
+    font-size: 18px;
+    width: 95%;
+  }
+
+  .content {
+    margin-top: 220px;
+  }
+}
+
+/* Ajustes para celulares muito pequenos */
+@media screen and (max-width: 320px) {
+  .logo {
+    top: 15px;
+  }
+
+  .titulo {
+    top: 120px;
+    font-size: 16px;
+  }
+
+  .content {
+    margin-top: 200px;
+  }
+}
+
+/* Ajuste para o conteúdo não ficar escondido */
+.content {
+  position: relative;
+  z-index: 1;
+}
